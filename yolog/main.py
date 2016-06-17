@@ -1,7 +1,8 @@
 import os
 import sys
 from yolog.yolog_generator import YologGenerator
-
+from yolog.yolog_updater import YologUpdater
+yolog_upd = YologUpdater(sys.argv[2:])
 yolog_gen = YologGenerator()
 
 help_description = ("""
@@ -44,5 +45,7 @@ def main():
     git_arguments = sys.argv[1:]
     if git_arguments and (sys.argv[1] == "-h" or sys.argv[1] == "--help"):
         print help_description
+    elif git_arguments and (sys.argv[1] == "config")
+    	    
     else:
         os.system(yolog_gen.git_command(" ".join(git_arguments)))

@@ -1,7 +1,7 @@
 from ConfigParser import SafeConfigParser
 
 config = SafeConfigParser()
-config.read('config.ini')
+config.read('../config.ini')
 RESET  = "$(tput sgr0)"
 BACKSPACE = "%x08"
 a = config.get('main', 'hash')
