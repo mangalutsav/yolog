@@ -1,23 +1,16 @@
 from ConfigParser import SafeConfigParser
 import os, sys
-a = ""
-b = ""
-c = ""
-d = ""
-e = ""
 RESET  = "$(tput sgr0)"
 BACKSPACE = "%x08"
-def getValueConfig():
-    config = SafeConfigParser()
-    path = '~/.yolog/config.ini'
-    path = os.path.expandvars(os.path.expanduser(path))
-    config.read(path)
-    a = config.get('main', 'hash')
-    b = config.get('main', 'author')
-    c = config.get('main', 'date')
-    d = config.get('main', 'refs')
-    e = config.get('main', 'description')
-    return
+config = SafeConfigParser()
+path = '~/.yolog/config.ini'
+path = os.path.expandvars(os.path.expanduser(path))
+config.read(path)
+a = config.get('main', 'hash')
+b = config.get('main', 'author')
+c = config.get('main', 'date')
+d = config.get('main', 'refs')
+e = config.get('main', 'description')
 
 class YologGenerator(object):
     BLACK  = "$(tput bold)$(tput setaf 0)"
@@ -28,7 +21,6 @@ class YologGenerator(object):
     PURPLE = "$(tput bold)$(tput setaf 5)"
     CYAN   = "$(tput bold)$(tput setaf 6)"
     WHITE  = "$(tput setaf 7)"
-    getValueConfig()
     if (a=='BLACK'):
         a = BLACK
     elif (a=='RED'):
@@ -108,7 +100,7 @@ class YologGenerator(object):
     elif (e=='WHITE'):
         e = WHITE
     else:
-        e = GREEN                        
+        e = GREEN                      
     def __init__(self):
         self._hash = "{0}%h{1}".format(self.a, RESET)
 
