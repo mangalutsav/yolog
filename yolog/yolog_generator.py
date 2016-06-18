@@ -1,16 +1,23 @@
 from ConfigParser import SafeConfigParser
 import os, sys
-config = SafeConfigParser()
-path = '~/.yolog/config.ini'
-path = os.path.expandvars(os.path.expanduser(path))
-config.read(path)
+a = ""
+b = ""
+c = ""
+d = ""
+e = ""
 RESET  = "$(tput sgr0)"
 BACKSPACE = "%x08"
-a = config.get('main', 'hash')
-b = config.get('main', 'author')
-c = config.get('main', 'date')
-d = config.get('main', 'refs')
-e = config.get('main', 'description')
+def getValueConfig():
+    config = SafeConfigParser()
+    path = '~/.yolog/config.ini'
+    path = os.path.expandvars(os.path.expanduser(path))
+    config.read(path)
+    a = config.get('main', 'hash')
+    b = config.get('main', 'author')
+    c = config.get('main', 'date')
+    d = config.get('main', 'refs')
+    e = config.get('main', 'description')
+    return
 
 class YologGenerator(object):
     BLACK  = "$(tput bold)$(tput setaf 0)"
@@ -21,85 +28,86 @@ class YologGenerator(object):
     PURPLE = "$(tput bold)$(tput setaf 5)"
     CYAN   = "$(tput bold)$(tput setaf 6)"
     WHITE  = "$(tput setaf 7)"
-    if (a=='BLACK')
+    getValueConfig()
+    if (a=='BLACK'):
         a = BLACK
-    elif (a=='RED')
+    elif (a=='RED'):
         a = RED
-    elif (a=='YELLOW')
+    elif (a=='YELLOW'):
         a = YELLOW
-    elif (a=='BLUE')
+    elif (a=='BLUE'):
         a = BLUE
-    elif (a=='PURPLE')
+    elif (a=='PURPLE'):
         a = PURPLE
-    elif (a=='CYAN')
+    elif (a=='CYAN'):
         a = CYAN
-    elif (a=='WHITE')
+    elif (a=='WHITE'):
         a = WHITE
-    else
+    else:
         a = GREEN
-    if (b=='BLACK')
+    if (b=='BLACK'):
         b = BLACK
-    elif (b=='RED')
+    elif (b=='RED'):
         b = RED
-    elif (b=='YELLOW')
+    elif (b=='YELLOW'):
         b = YELLOW
-    elif (b=='BLUE')
+    elif (b=='BLUE'):
         b = BLUE
-    elif (b=='PURPLE')
+    elif (b=='PURPLE'):
         b = PURPLE
-    elif (b=='CYAN')
+    elif (b=='CYAN'):
         b = CYAN
-    elif (b=='WHITE')
+    elif (b=='WHITE'):
         b = WHITE
-    else
+    else:
         b = GREEN
-    if (c=='BLACK')
+    if (c=='BLACK'):
         c = BLACK
-    elif (c=='RED')
+    elif (c=='RED'):
         c = RED
-    elif (c=='YELLOW')
+    elif (c=='YELLOW'):
         c = YELLOW
-    elif (c=='BLUE')
+    elif (c=='BLUE'):
         c = BLUE
-    elif (c=='PURPLE')
+    elif (c=='PURPLE'):
         c = PURPLE
-    elif (c=='CYAN')
+    elif (c=='CYAN'):
         c = CYAN
-    elif (c=='WHITE')
+    elif (c=='WHITE'):
         c = WHITE
-    else
+    else:
         c = GREEN
-    if (d=='BLACK')
+    if (d=='BLACK'):
         d = BLACK
-    elif (d=='RED')
+    elif (d=='RED'):
         d = RED
-    elif (d=='YELLOW')
+    elif (d=='YELLOW'):
         d = YELLOW
-    elif (d=='BLUE')
+    elif (d=='BLUE'):
         d = BLUE
-    elif (d=='PURPLE')
+    elif (d=='PURPLE'):
         d = PURPLE
-    elif (d=='CYAN')
+    elif (d=='CYAN'):
         d = CYAN
-    elif (d=='WHITE')
+    elif (d=='WHITE'):
         d = WHITE
-    else
+    else:
         d = GREEN
-    if (e=='BLACK')
+    if (e=='BLACK'):
         e = BLACK
-    elif (e=='RED')
+    elif (e=='RED'):
         e = RED
-    elif (e=='YELLOW')
+    elif (e=='YELLOW'):
         e = YELLOW
-    elif (e=='BLUE')
+    elif (e=='BLUE'):
         e = BLUE
-    elif (e=='PURPLE')
+    elif (e=='PURPLE'):
         e = PURPLE
-    elif (e=='CYAN')
+    elif (e=='CYAN'):
         e = CYAN
-    elif (e=='WHITE')
+    elif (e=='WHITE'):
         e = WHITE
-    else
+    else:
         e = GREEN                        
     def __init__(self):
         self._hash = "{0}%h{1}".format(self.a, RESET)
