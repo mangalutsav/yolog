@@ -11,7 +11,6 @@ b = config.get('main', 'author')
 c = config.get('main', 'date')
 d = config.get('main', 'refs')
 e = config.get('main', 'description')
-
 class YologGenerator(object):
     BLACK  = "$(tput bold)$(tput setaf 0)"
     RED    = "$(tput bold)$(tput setaf 1)"
