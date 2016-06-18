@@ -7,17 +7,17 @@ try:
     os.stat(path)
 except:
     os.mkdir(path) 
-path = path + '/config.ini'
-config = SafeConfigParser()
-config.read(path)
-config.add_section('main')
-config.set('main', 'hash', 'YELLOW')
-config.set('main', 'author', 'BLUE')
-config.set('main', 'date', 'GREEN')
-config.set('main', 'refs', 'RED')
-config.set('main', 'description', 'WHITE')
-with open(path, 'w') as f:
-    config.write(f)
+    path = path + '/config.ini'
+    config = SafeConfigParser()
+    config.read(path)
+    config.add_section('main')
+    config.set('main', 'hash', 'YELLOW')
+    config.set('main', 'author', 'BLUE')
+    config.set('main', 'date', 'GREEN')
+    config.set('main', 'refs', 'RED')
+    config.set('main', 'description', 'WHITE')
+    with open(path, 'w') as f:
+        config.write(f)    
 setup(
     name='yolog',
     version='0.2.1',
