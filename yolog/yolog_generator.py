@@ -1,7 +1,9 @@
 from ConfigParser import SafeConfigParser
-
+import os, sys
 config = SafeConfigParser()
-config.read('~/.yolog/config.ini')
+path = '~/.yolog/config.ini'
+path = os.path.expandvars(os.path.expanduser(path))
+config.read(path)
 RESET  = "$(tput sgr0)"
 BACKSPACE = "%x08"
 a = config.get('main', 'hash')
