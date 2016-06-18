@@ -25,7 +25,7 @@ Obtain stable release from PyPI
 To obtain the bleeding edge version, clone the repo and build it from source:
 ::
   git clone https://www.github.com/karandesai-96/yolog
-  cd yolog && python setup.py build && python config.py
+  cd yolog && python setup.py build
 
 
 Usage
