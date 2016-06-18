@@ -1,7 +1,7 @@
 from ConfigParser import SafeConfigParser
 
 config = SafeConfigParser()
-config.read('../config.ini')
+config.read('~/.yolog/config.ini')
 
 class YologUpdater( arg )
 	if arg[0] != 'author' and arg[0] != 'hash' and arg[0] != 'description' and arg[0] != 'date' and args[0] != 'refs'
@@ -10,5 +10,5 @@ class YologUpdater( arg )
 		return '-2'
 	else 
 		config.set('main',arg[0],arg[1])
-		with open('../config.ini', 'w') as f:
+		with open('~/.yolog/config.ini', 'w') as f:
     	config.write(f)
